@@ -354,7 +354,6 @@ open class OAuth2Base: OAuth2Securable {
 	*/
 	public final func parseAccessTokenResponse(params: OAuth2JSON) throws -> OAuth2JSON {
 		try assureNoErrorInResponse(params)
-		try assureCorrectBearerType(params)
 		try assureAccessTokenParamsAreValid(params)
 		
 		clientConfig.updateFromResponse(normalizeAccessTokenResponseKeys(params))
